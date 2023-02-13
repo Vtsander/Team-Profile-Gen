@@ -27,4 +27,5 @@
  - Github - @Vtsander
  - Email - nguyenveroneca@yahoo.com
 ## Photos of Project
- - <img src="./assets/TeamGen.png">
+ - <img src="./Main/assets/TeamGen.png">
+ - <img src="./Main/assets/TeamGenNode.png">
