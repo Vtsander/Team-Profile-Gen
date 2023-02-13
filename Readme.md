@@ -21,8 +21,10 @@
 ## Contributors
  - Veroneca Sander
 ## Challenges
- - 
- - 
+ - Pushing to github was giving me issues when trying to add the license, it would not allow me to push or pull anything for a day or two.
+ - Making the reset, was unsure at first how to do that.
+ - Understanding that the library had basically the same code, kept trying to do something different for each at first.
+ - How to get the javascript to create an HTML file.
 ## Contact Info
  - Github - @Vtsander
  - Email - nguyenveroneca@yahoo.com
