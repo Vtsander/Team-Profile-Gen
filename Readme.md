@@ -31,5 +31,5 @@
 ## Link
  - https://drive.google.com/file/d/1G4jQFl1iJXgmc14fQCl9gtywZyFZDf4_/view
 ## Photos of Project
- - <img src="./Develop/assets/TeamGen.png">
- - <img src="./Develop/assets/TeamGenNode.png">
+ - <img src="./assets/TeamGen.png">
+ - <img src="./assets/TeamGenNode.png">
