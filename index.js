@@ -16,8 +16,14 @@ async function questions() {
     {
       type: 'input',
       name: 'name',
-      message: 'What is the name of the employee?',
+      message: 'What is the first name of the employee?',
       validate: nameInput => nameInput ? true : 'Please enter their name.',
+    },
+    {
+      type: 'input',
+      name: 'lastname',
+      message: 'What is the last name of the employee?',
+      validate: LastnameInput => LastnameInput ? true : 'Please enter their name.',
     },
     {
       type: 'input',
@@ -51,6 +57,7 @@ async function questions() {
       ]);
       const newManager = new Manager(
         answers.name,
+        answers.lastname,
         answers.id,
         answers.email,
         managerAns.officeNumber
@@ -67,6 +74,7 @@ async function questions() {
       ]);
       const newEngineer = new Engineer(
         answers.name,
+        answers.lastname,
         answers.id,
         answers.email,
         githubAns.github
@@ -83,6 +91,7 @@ async function questions() {
       ]);
       const newIntern = new Intern(
         answers.name,
+        answers.lastname,
         answers.id,
         answers.email,
         internAns.school
