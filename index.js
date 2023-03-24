@@ -38,27 +38,68 @@ async function questions() {
       choices: ['Manager', 'Engineer', 'Intern'],
     },
   ]);
+
   switch (answers.role) {
     case 'Manager':
       const managerAns = await inquirer.prompt([
         {
           type: 'input',
           name: 'officeNumber',
-          message: 'What is your Office Number?',
-          validate: officeNumberInput => officeNumberInput ? true : 'Please enter your office Number',
+          message: 'What is their Office Number?',
+          validate: officeNumberInput => officeNumberInput ? true : 'Please enter their office Number.',
         },
       ]);
-    }
+      const newManager = new Manager(
+        answers.name,
+        answers.id,
+        answers.email,
+        managerAns.officeNumber
+      );
+      teamMembers.push(newManager);
+      break;
+    case 'Engineer':
+      const githubAns = await inquirer.prompt([
+        {
+          type: 'input',
+          name: 'github',
+          message: 'What is their github username?',
+        },
+      ]);
+      const newEngineer = new Engineer(
+        answers.name,
+        answers.id,
+        answers.email,
+        githubAns.github
+      );
+      teamMembers.push(newEngineer);
+      break;
+    case 'Intern':
+      const internAns = await inquirer.prompt([
+        {
+          type: 'input',
+          name: 'school',
+          message: 'What school did they attend?',
+        },
+      ]);
+      const newIntern = new Intern(
+        answers.name,
+        answers.id,
+        answers.email,
+        internAns.school
+      );
+      teamMembers.push(newIntern);
+      break;
+  }
   const addMemberAns = await inquirer.prompt([
     {
       name: 'addMember',
       type: 'list',
-      choices: ['Add a another new member?', 'Finished adding members and create new team.'],
+      choices: ['Add another new member?', 'Finished adding members and create new team.'],
       message: 'Please choose a new team member.',
     },
   ]);
 
-  if (addMemberAns.addMember === 'Add a new member') {
+  if (addMemberAns.addMember === 'Add another new member?') {
     await questions();
   } else {
     buildTeam();
