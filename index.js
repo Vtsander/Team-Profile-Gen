@@ -38,6 +38,17 @@ async function questions() {
       choices: ['Manager', 'Engineer', 'Intern'],
     },
   ]);
+  switch (answers.role) {
+    case 'Manager':
+      const managerAns = await inquirer.prompt([
+        {
+          type: 'input',
+          name: 'officeNumber',
+          message: 'What is your Office Number?',
+          validate: officeNumberInput => officeNumberInput ? true : 'Please enter your office Number',
+        },
+      ]);
+    }
   const addMemberAns = await inquirer.prompt([
     {
       name: 'addMember',
