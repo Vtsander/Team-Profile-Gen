@@ -16,20 +16,20 @@ async function questions() {
     {
       type: 'input',
       name: 'name',
-      message: 'What is the of the employee name?',
-      validate: nameInput => nameInput ? true : 'Please enter their name',
+      message: 'What is the name of the employee?',
+      validate: nameInput => nameInput ? true : 'Please enter their name.',
     },
     {
       type: 'input',
       name: 'id',
       message: 'What is the employees id number?',
-      validate: idInput => idInput ? true : 'Please enter their employee id number',
+      validate: idInput => idInput ? true : 'Please enter their employee id number.',
     },
     {
       type: 'input',
       name: 'email',
       message: 'What is their email address?',
-      validate: emailInput => emailInput ? true : 'Please enter their email address',
+      validate: emailInput => emailInput ? true : 'Please enter their email address.',
     },
     {
       type: 'list',
@@ -38,6 +38,20 @@ async function questions() {
       choices: ['Manager', 'Engineer', 'Intern'],
     },
   ]);
+  const addMemberAns = await inquirer.prompt([
+    {
+      name: 'addMember',
+      type: 'list',
+      choices: ['Add a another new member?', 'Finished adding members and create new team.'],
+      message: 'Please choose a new team member.',
+    },
+  ]);
+
+  if (addMemberAns.addMember === 'Add a new member') {
+    await questions();
+  } else {
+    buildTeam();
+  }
 }
 
 function buildTeam() {
